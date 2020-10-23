@@ -1,0 +1,77 @@
+1...........................
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE Ex1
+	-- Add the parameters for the stored procedure here
+@JazikID AS INT
+AS
+BEGIN
+	SET NOCOUNT ON;
+SELECT naslov,opis,gal_id_galerija
+FROM Galerija_Opis As G
+	INNER JOIN
+	Jazik As J
+		On G.jazik_id_jazikg = J.id_jazik
+WHERE J.id_jazik = @JazikID
+
+END
+GO
+
+2.......................................
+
+
+
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE PROCEDURE Ex2
+-- Add the parameters for the stored procedure here
+@Article AS nvarchar (50)
+AS
+BEGIN
+	SET NOCOUNT ON;
+
+
+SELECT ime,naslov,id_admin
+FROM Kadministrator As K
+	INNER JOIN
+	Knovost As Kn
+		On Kn.adm_id_admin = K.id_admin
+WHERE Kn.naslov = @Article
+
+
+END
+GO
+
+3...................................................
+CREATE PROCEDURE Ex3
+@affiliation as nvarchar(50)
+AS
+SELECT E.ime, COUNT(M.Email_Id_Grupa) as GroupNum
+FROM Email AS E
+    INNER JOIN
+    Mailing AS M
+    on E.id_posetitel = M.Email_Id_Posetitel
+GROUP BY ime
+ORDER BY GroupNum
+GO
+EXEC Ex3 @affiliation = 'John';
+
+4............................................
+
+CREATE PROCEDURE Ex4
+AS
+SELECT e.naslov, e.tekst
+FROM Email_Poraka AS E
+    INNER JOIN
+    Email_Grupa AS G
+        on E.Grupa_Id_Grupa = g.id_grupa
+WHERE G.aktivna = 1
+GO
+EXEC Ex4

@@ -1,0 +1,151 @@
+USE Karavan_4453
+
+
+INSERT INTO KADMINISTRATOR (username, password, ime, telefon)
+VALUES
+('Daniel4453', '123', 'Daniel', '072 300 718'),
+('Stojan222', '1234', 'Stojan', '071 279 424'),
+('Tino442', '12345', 'Kontra', '071 231 845'),
+('Leo5123', '12346', 'Leo', '071 279 485'),
+('Dragana11234', '1234567', 'Dragana', '071 279 275'),
+('Kamce1245', '12345678', 'Kamce', '071 279 842'),
+('Miki444', '12345679', 'Miki', '071 249 286'),
+('Pano442', '123434', 'Panco', '071 279 111'),
+('Pavel513', 'abc', 'Koles', '071 279 997'),
+('Gligor4253', 'abcdefg', 'Dragan', '071 279 333')
+
+
+INSERT INTO JAZIK (jazik)
+VALUES
+('English'),
+('Albanian'),
+('Deutch'),
+('Portugeese'),
+('Spanish'),
+('Ungarian'),
+('Japaneese'),
+('Mandorin'),
+('French'),
+('Macedonian')
+
+INSERT INTO KNOVOST (adm_id_admin, jazik_id_jazik, naslov, opis, datum_od, datum_do)
+VALUES 
+('1','1', 'The Seven Samurai', 'Action', '2020-04-06', '2020-05-07'),
+('2','2', 'Bonnie and Clyde', 'Action', '2020-04-08', '2020-05-09'),
+('3','3', 'Reservoir Dogs', 'Action', '2020-04-10', '2020-05-11'),
+('4','4', 'Airplane!', 'Action', '2020-04-12', '2020-05-13'),
+('5','5', 'John Wick 1', 'Action', '2020-04-14', '2020-05-15'),
+('6','6', 'John Wick 2', 'Action', '2020-04-16', '2020-05-17'),
+('7','7', 'Die Hard', 'Romance', '2020-04-18', '2020-05-19'),
+('8','8', 'Frozen', 'Animated', '2020-04-20', '2020-05-21'),
+('9','9', 'Zombieland', 'Action', '2020-04-22', '2020-05-23'),
+('10','10', 'Beauty and the Beast', 'Horror', '2020-04-24', '2020-05-25')
+
+INSERT INTO KDOKUMENT (naslov, jazik_id_jazikd, dokument, prikaz)
+VALUES
+('PASSPORT', '1', 'TRADITIONAL', '12'),
+('ID CARD', '2', 'TRADITIONAL', '52'),
+('ID CARD', '3', 'TRADITIONAL', '32'),
+('ID CARD', '4', 'TRADITIONAL', '62'),
+('PASSPORT', '5', 'TRADITIONAL', '84'),
+('ID CARD', '6', 'TRADITIONAL', '38'),
+('ID CARD', '7', 'TRADITIONAL', '23'),
+('PASSPORT', '8', 'TRADITIONAL', '83'),
+('ID CARD', '9', 'TRADITIONAL', '27'),
+('PASSPORT', '10', 'TRADITIONAL', '16')
+
+
+INSERT INTO EMAIL (ime, mail)
+VALUES
+('daniel', 'daniel.kiprijanovski@gmail.com'),
+('Walter White', 'cocaine1991@gmail.com'),
+('Anastasija', 'anastasijaraznjatovic@gmail.com'),
+('Biljana', 'bile@gmail.com'),
+('Ivana', 'ivano123@gmail.com'),
+('Joci', 'jovano@gmail.com'),
+('Bratislava', 'nratislava@gmail.com'),
+('Tyrese', 'tyrese@gmail.com'),
+('Gligor', 'gligor@gmail.com'),
+('John Snow', 'nightswatch@gmail.com')
+
+
+INSERT INTO EMAIL_GRUPA (jazik_id_jazikm, naziv, aktivna)
+VALUES
+('1', 'BUSINESS', '1'),
+('2', 'PLEASURE', '0'),
+('3', 'BUSINESS', '0'),
+('4', 'BUSINESS', '0'),
+('5', 'PLEASURE', '1'),
+('6', 'PLEASURE', '1'),
+('7', 'BUSINESS', '0'),
+('8', 'PLEASURE', '1'),
+('9', 'BUSINESS', '0'),
+('10', 'PLEASURE', '1')
+
+
+INSERT INTO EMAIL_PORAKA(grupa_id_grupa, datum, naslov, tekst)
+VALUES
+('1', '2020-11-25', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('2', '2020-11-26', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('3', '2020-11-27', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('4', '2020-11-28', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('5', '2020-11-29', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('6', '2020-11-30', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('7', '2020-12-01', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('8', '2020-12-02', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('9', '2020-12-03', 'IZVESTUVANJE', 'NEW UPDATE!!!'),
+('10', '2020-12-04', 'IZVESTUVANJE', 'NEW UPDATE!!!')
+
+INSERT INTO MAILING (email_id_posetitel, email_id_grupa)
+VALUES
+('1', '1'),
+('2', '2'),
+('3', '3'),
+('4', '4'),
+('5', '5'),
+('6', '6'),
+('7', '7'),
+('8', '8'),
+('9', '9'),
+('10', '10')
+
+INSERT INTO GALERIJA (preview)
+VALUES
+('123'),
+('512'),
+('125'),
+('612'),
+('126'),
+('374'),
+('569'),
+('247'),
+('286'),
+('127')
+
+INSERT INTO GALERIJA_OPIS (jazik_id_jazikg, naslov, opis)
+VALUES
+('1', 'Friend', 'agreeable'),
+('2', 'Athlete', 'ambitious'),
+('3', 'Friend', 'Brave'),
+('4', 'Friend', 'calm'),
+('5', 'Athlete', 'delightful'),
+('6', 'Athlete', 'eager'),
+('7', 'Friend', 'gentle'),
+('8', 'Athlete', 'nice'),
+('9', 'Friend', 'polite'),
+('10', 'Friend', 'proud')
+
+INSERT INTO GALERIJA_SLIKA(gal_id_galerijas, opisslika, slika, opisslikaeng)
+VALUES
+('1', 'mrzliv', 'id_0622', 'lazy'),
+('2', 'smotan', 'id_1522', 'clumsy'),
+('3', 'porazen', 'id_1622', 'defeated'),
+('4', 'strasen', 'id_9552', 'scary'),
+('5', 'nervozen', 'id_1002', 'angry'),
+('6', 'silen', 'id_1262', 'fierce'),
+('7', 'nervozen', 'id_3542', 'nervous'),
+('8', 'zagrizen', 'id_2372', 'worried'),
+('9', 'nervozen', 'id_7252', 'grumpy'),
+('10', 'ljubomoren', 'id_8922', 'jealous')
+
+
