@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HomeWork 4453 Daniel Kiprijanovski</title>
+    <script>
+       function dateShow() {
+            var date = new Date();
+            var dd = date.getDate();
+            var mm = date.getMonth() + 1;
+            var yyyy = date.getFullYear();
+            date = mm + '-' + dd + '-' + yyyy;
+            alert(date);
+            date = mm + '/' + dd + '/' + yyyy;
+            alert(date);
+            date = dd + '-' + mm + '-' + yyyy;
+            alert(date);
+            date = dd + '/' + mm + '/' + yyyy;
+            alert(date);
+        }
+
+
+        function calcArea() {
+            var A = parseFloat(document.getElementById("A").value);
+            var B = parseFloat(document.getElementById("B").value);
+            var C = parseFloat(document.getElementById("C").value);
+            var S = (A + B + C) / 2;
+            var area = Math.sqrt(S * (S - A) * (S - B) * (S - C));
+            document.getElementById("area").innerHTML = area;
+        }
+
+
+
+        function RotateString(id) {
+            var element = document.getElementById(id);            
+            var textNode = document.getElementById("rotateing");            
+            textNode.innerHTML = element.value;
+            var text = textNode.innerHTML;
+
+            setInterval(function () {
+                text = text[text.length - 1] + text.substring(0, text.length - 1);            
+                document.getElementById("rotateing").innerHTML = text;
+            }, 200);
+        }
+
+
+        function GuessNumber() {
+            var number = Math.ceil(Math.random() * 10);
+            var guessnumber = prompt('Guess the number between 1 and 10 inclusive');
+            if (guessnumber == number)
+                alert('Good Work You Guess The Number');
+            else
+                alert('Not matched, the number was ' + number);
+        }
+
+
+    </script>
+</head>
+<body>
+    <div name="Assigment 1 Div">
+
+    <button onclick="dateShow()" name="Date">1.ShowDate</button>
+
+    </div>
+<br>
+<br>
+    <div name="Assigment 2 Div">
+
+        <input type="text"  id="A" value="" size="2" name="sideA">
+        <input type="text"  id="B" value="" size="2" name="sideB">
+        <input type="text"  id="C" value="" size="2" name="sideC">
+
+        <button onclick="calcArea()" name="CalcArea">2.CalculateArea</button>
+        <p id="area" name="area"></p>
+
+    </div>
+<br>
+<br>
+    <div name="Assigment 3 Div">        
+        <input type="text" name="targetInput" id="targetInput">
+        <button onclick="RotateString('targetInput')" name="rotate">3.Rotate the string</button>
+        <p id="rotateing" name="rotateing"></p>
+
+    </div>
+<br>
+<br>
+    <div name="Assigment 4 Div">
+    
+    <input type="button" value="Guess Number Game!" onclick="GuessNumber()" name="guess" >
+    </div>
+
+
+</body>
+</html>
