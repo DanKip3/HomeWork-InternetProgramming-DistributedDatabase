@@ -1,0 +1,74 @@
+use Midterm_4453
+
+
+
+CREATE TABLE dbo.Bus
+(
+vehicle int IDENTITY(1,1) NOT NULL,
+scheduled int NOT NULL,
+fleet_id int NULL,
+last_main datetime NULL,
+CONSTRAINT [PK_vehicle] PRIMARY KEY CLUSTERED(vehicle)
+
+)
+
+
+CREATE TABLE dbo.Schedule
+(
+idSchedule int identity (1,1) NOT NULL,
+RouteId int NOT NULL,
+departure datetime NULL,
+arrival nvarchar(255) NULL,
+CONSTRAINT [PK_idSchedule] PRIMARY KEY CLUSTERED
+(idSchedule ASC)
+)
+
+
+CREATE TABLE dbo.Driver
+
+(
+idDriver int identity (1,1) NOT NULL,
+BusVehicle int  NOT NULL,
+[Name] nvarchar(255) NULL,
+employ_Date datetime NULL,
+CONSTRAINT [PK_idDriver] PRIMARY KEY CLUSTERED
+(
+ idDriver ASC
+)
+)
+
+
+
+CREATE TABLE dbo.[Route]
+(
+idRoute int identity (1,1) NOT NULL,
+fare float NULL,
+CONSTRAINT [PK_idRoute] PRIMARY KEY CLUSTERED
+(
+idRoute ASC
+)
+)
+
+
+
+CREATE TABLE dbo.RouteStop
+(
+idRouteStop int identity(1,1) NOT NULL,
+RouteID int  NOT NULL,
+StopId int NOT NULL,
+CONSTRAINT [PK_idRouteStop] PRIMARY KEY CLUSTERED
+(
+idRouteStop ASC
+)
+)
+
+CREATE TABLE dbo.Stop
+(
+idStop int IDENTITY(1,1) NOT NULL,
+[Name] nvarchar(255) NULL,
+Terminus nvarchar(MAX) NULL,
+CONSTRAINT [PK_idStop] PRIMARY KEY CLUSTERED
+(
+idStop ASC
+)
+)

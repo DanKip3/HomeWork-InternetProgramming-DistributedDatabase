@@ -1,0 +1,18 @@
+CREATE PROCEDURE Stops @vehicle NUMERIC
+AS
+SELECT * 
+FROM    [dbo].[Bus] as B
+        INNER JOIN 
+        [dbo].[Schedule] as S
+            ON B.ScheduleId = S.id
+        INNER JOIN
+        [dbo].[Route] AS R
+            ON R.id = S.RouteId
+        INNER JOIN
+        [dbo].[RouteStop] AS RS
+            ON RS.RouteId = R.id
+        INNER JOIN 
+        [dbo].[Stop] AS St
+            ON St.id = RS.StopId
+WHERE vehicle = @vehicle
+GO
